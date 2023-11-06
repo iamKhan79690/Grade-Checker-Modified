@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grade Checker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="div3">
+<div>
+    <form onsubmit=" Gradecheck(event)">
+        <label for="userChoice"><b>Enter Your Grade :</b></label><br>
+      <input type="number"  id="userChoice"  placeholder="Enter Your Percentage"  required /><br><br><br>
+
+      <button class="button"><b>Submit</b></button><br>
+    </form>
+</div>
+     <div class="div2"><h1 id="result" class="bt"></h1></div>
+    </div>
+
+    <script>
+      function Gradecheck(event) {
+        event.preventDefault();
+        let userChoice = document.querySelector("#userChoice").value;
+        userChoice = Number(userChoice);
+
+        if (userChoice < 50) {
+          document.querySelector("#result").innerHTML = "F";
+        } else if (userChoice < 60) {
+          document.querySelector("#result").innerHTML = "C";
+        } else if (userChoice < 70) {
+          document.querySelector("#result").innerHTML = "B";
+        } else if (userChoice < 80) {
+          document.querySelector("#result").innerHTML = "A";
+        } else  {
+          document.querySelector("#result").innerHTML = "A+";
+      }
+    }
+    </script>
+  </body>
+</html>
